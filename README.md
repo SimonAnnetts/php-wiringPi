@@ -33,8 +33,8 @@ Build & install with:
     
 The build script does the following things:
     
-1) Downloads or updates the wiringPi library and utilities from https://git.drogon.net/wiringPi
-2) Builds and Installs the wiringPi library
-3) Creates an interface file for SWIG using the wiringPi header files
-4) Uses SWIG to create the PHP module source code and include files
-5) Builds the PHP module source and installs the shared module library
+	1) Downloads or updates the wiringPi library and utilities from https://git.drogon.net/wiringPi
+	2) Builds and Installs the wiringPi library
+	3) Creates an interface file for SWIG using the wiringPi header files
+	4) Uses SWIG to create the PHP module source code and include files
+	5) Builds the PHP module source and installs the shared module library
