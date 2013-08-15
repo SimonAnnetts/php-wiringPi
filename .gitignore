@@ -1,0 +1,7 @@
+wiringPi/
+wiringPi.i
+wiringPi_wrap.c
+wiringPi_wrap.o
+wiringPi.so
+wiringPi.php
+php_wiringPi.h
