@@ -40,7 +40,7 @@ gcc `php-config --includes` -fpic -c wiringPi_wrap.c
 gcc -shared wiringPi_wrap.o -o wiringPi.so
 
 echo "Copying wiringPi.so to PHP extensions dir..."
-cp -f wiringPi.so `php-config --extension-dir`/
+sudo cp -f wiringPi.so `php-config --extension-dir`/
 echo "There is a wiringPi.php include file that loads the module and provides a wiringPi class."
 echo "DONE!"
 

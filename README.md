@@ -29,7 +29,7 @@ Get/setup repo:
 
 Build & install with:
     
-		sudo ./build.sh
+		./build.sh
     
 The build script does the following things:
     
@@ -37,4 +37,4 @@ The build script does the following things:
 	2) Builds and Installs the wiringPi library
 	3) Creates an interface file for SWIG using the wiringPi header files
 	4) Uses SWIG to create the PHP module source code and include files
-	5) Builds the PHP module source and installs the shared module library
+	5) Builds the PHP module source and then installs the shared module library (using sudo)
