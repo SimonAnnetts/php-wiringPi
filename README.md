@@ -24,6 +24,7 @@ Prerequisites:
 
 Get/setup repo:
     git clone https://github.com/JakDaniels/php-wiringPi
+    
     cd php-wiringPi
 
 Build & install with:
