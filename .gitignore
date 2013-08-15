@@ -4,4 +4,6 @@ wiringPi_wrap.c
 wiringPi_wrap.o
 wiringPi.so
 wiringPi.php
+wiringPi.ini
+wiringPi.h
 php_wiringPi.h
