@@ -30,6 +30,12 @@ Get/setup repo:
 Build & install with:
     
 		./build.sh
+		
+Check that the module loads:
+
+		php -m
+		
+Look for the wiringPi module in the list and that there are no errors.
     
 The build script does the following things:
     
