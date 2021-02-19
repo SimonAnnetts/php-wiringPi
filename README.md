@@ -5,7 +5,7 @@ PHP bindings to the Raspberry PI wiringPi libraries.
 
 
 WARNING: This is an in-development library, it will not be bug free and fully featured.
-    Please email jak at ateb dot co dot uk if you have any problems, suggestions,
+    Please email simon at ateb dot co dot uk if you have any problems, suggestions,
     questions or words of support.
 
 WiringPi: An implementation of most of the Arduino Wiring functions for the Raspberry Pi
@@ -22,7 +22,7 @@ Prerequisites:
 
 Get/setup repo:
 
-		git clone https://github.com/JakDaniels/php-wiringPi
+		git clone https://github.com/SimonAnnetts/php-wiringPi
 		cd php-wiringPi
 
 Build & install with:
