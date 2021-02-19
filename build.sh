@@ -21,16 +21,13 @@ else
 	cd ..
 fi
 
-# cat wiringPi/wiringPi/wiringPi.h |grep -v "wiringPiSetupPiFace" >wiringPi.h
-cat WiringPi/wiringPi/wiringPi.h  >wiringPi.h
-
 echo "Writing an interface file for SWIG...."
 echo "%module wiringPi" >${outfile}
 echo "%{" >>${outfile}
-echo "#include \"wiringPi.h\"" >>${outfile}
+echo "#include \"WiringPi/wiringPi/wiringPi.h\"" >>${outfile}
 for i in WiringPi/wiringPi/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
-	[ -f $j.h ] && [ "$j" != "WiringPi/wiringPi/wiringPi" ] && echo "#include \"$j.h\"" >>${outfile}
+	[ -f $j.h ] && echo "#include \"$j.h\"" >>${outfile}
 done
 for i in WiringPi/devLib/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
@@ -39,10 +36,10 @@ done
 echo "%}" >>${outfile}
 echo >>${outfile}
 
-echo "%include \"wiringPi.h\"" >>${outfile}
+echo "%include \"WiringPi/wiringPi/wiringPi.h\"" >>${outfile}
 for i in WiringPi/wiringPi/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
-	[ -f $j.h ]  && [ "$j" != "WiringPi/wiringPi/wiringPi" ] && echo "%include \"$j.h\"" >>${outfile}
+	[ -f $j.h ] && echo "%include \"$j.h\"" >>${outfile}
 done
 for i in wiringPi/devLib/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
