@@ -28,11 +28,11 @@ echo "Writing an interface file for SWIG...."
 echo "%module wiringPi" >${outfile}
 echo "%{" >>${outfile}
 echo "#include \"wiringPi.h\"" >>${outfile}
-for i in wiringPi/wiringPi/*.o; do
+for i in WiringPi/wiringPi/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
-	[ -f $j.h ] && [ "$j" != "wiringPi/wiringPi/wiringPi" ] && echo "#include \"$j.h\"" >>${outfile}
+	[ -f $j.h ] && [ "$j" != "WiringPi/wiringPi/wiringPi" ] && echo "#include \"$j.h\"" >>${outfile}
 done
-for i in wiringPi/devLib/*.o; do
+for i in WiringPi/devLib/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
 	[ -f $j.h ] && echo "#include \"$j.h\"" >>${outfile}
 done
@@ -40,9 +40,9 @@ echo "%}" >>${outfile}
 echo >>${outfile}
 
 echo "%include \"wiringPi.h\"" >>${outfile}
-for i in wiringPi/wiringPi/*.o; do
+for i in WiringPi/wiringPi/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
-	[ -f $j.h ]  && [ "$j" != "wiringPi/wiringPi/wiringPi" ] && echo "%include \"$j.h\"" >>${outfile}
+	[ -f $j.h ]  && [ "$j" != "WiringPi/wiringPi/wiringPi" ] && echo "%include \"$j.h\"" >>${outfile}
 done
 for i in wiringPi/devLib/*.o; do
 	j=$(echo $i|rev|cut -c3-|rev)
@@ -50,7 +50,7 @@ for i in wiringPi/devLib/*.o; do
 done
 
 echo "Using SWIG to create PHP module source...."
-swig -php${swig_php_version} ${outfile}
+swig -v -php${swig_php_version} ${outfile}
 
 php_includes=$(php-config --includes)
 php_extensions=$(php-config --extension-dir)
@@ -71,7 +71,7 @@ sudo chown root:root /etc/php/${php_version}/mods-available/wiringPi.ini
 
 for i in cli apache2; do
 	if [ -d /etc/php/${php_version}/${i} ]; then
-		sudo ln -s /etc/php/${php_version}/mods-available/wiringPi.ini /etc/php/${php_version}/${i}/conf.d/20-wiringPi.ini
+		sudo ln -s /etc/php/${php_version}/mods-available/wiringPi.ini /etc/php/${php_version}/${i}/conf.d/20-wiringPi.ini 2>/dev/null
 	fi
 done
 
